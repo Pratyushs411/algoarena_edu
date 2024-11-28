@@ -27,9 +27,10 @@ export interface ISettings {
 }
 const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved }) => {
   const [activeTestCaseId, setActiveTestCaseId] = useState<number>(0);
+	// eslint-disable-next-line prefer-const
 	let [userCode, setUserCode] = useState<string>(problem.startercode);
 
-	const [fontSize, setFontSize] = useLocalStorage("lcc-fontSize", "16px");
+	const [fontSize] = useLocalStorage("lcc-fontSize", "16px");
 
 	const [settings, setSettings] = useState<ISettings>({
 		fontSize: fontSize,
