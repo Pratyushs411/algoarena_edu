@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useSetRecoilState } from "recoil";
 import { toast } from "react-hot-toast";
-type LoginProps = {};
 
 const Login: React.FC = () => {
     const setAuthModalState = useSetRecoilState(authModalState);
@@ -13,7 +12,7 @@ const Login: React.FC = () => {
 		setAuthModalState((prev) => ({ ...prev, type }));
 	};
   const [inputs, setInputs] = useState({ email: "", password: "" });
-	const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+	const [signInWithEmailAndPassword, loading, error] = useSignInWithEmailAndPassword(auth);
 	const router = useRouter();
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));

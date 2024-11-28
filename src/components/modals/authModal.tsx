@@ -4,8 +4,8 @@ import Image from "next/image";
 import Signup from "./signup";
 import { authModalState } from "@/atoms/authModalAtom";
 import ResetModal from "./resetModal";
-type AuthModalProps = {};
-import { useRecoilValue, useSetRecoilState } from "recoil";
+type AuthModalProps = Record<string, never>;
+import { useRecoilValue} from "recoil";
 const AuthModal:React.FC<AuthModalProps>  = () => {
     const authModal = useRecoilValue(authModalState);
   return (
